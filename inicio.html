@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dim">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genrador de contraseña</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./src/estilo.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+          theme: {
+            container: {
+                center: true,
+              },
+          }
+        }
+      </script>
+</head>
+
+<body class= " ">
+      <div class="">
+        <div class="container glass">
+      <h1 class="text-4xl decoration-solid pb-5">
+        Generador de contraseña
+      </h1>
+      <div class=" ">
+        <button class="btn absolut btn-outline btn-accent" id="generateBtn">Generar Password</button>
+      <textarea class="textarea textarea-bordered" id="passwordOutput"></textarea>
+    </div>
+    </div>
+  </div>
+  <script>
+    function generarContraseña(longitud) {
+      const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      let contraseña = '';
+      for (let i = 0; i < longitud; i++) {
+          const caracterAleatorio = caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+          contraseña += caracterAleatorio;
+      }
+      return contraseña;
+  }
+
+  const generateBtn = document.getElementById('generateBtn');
+  const passwordOutput = document.getElementById('passwordOutput');
+
+
+  generateBtn.addEventListener('click', function () {
+      const longitud = 12; 
+      const nuevaContraseña = generarContraseña(longitud);
+      passwordOutput.innerText = nuevaContraseña;
+  });
+  </script>
+</body>
+</html>

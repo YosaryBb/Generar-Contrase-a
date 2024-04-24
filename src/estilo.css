@@ -1,0 +1,9 @@
+.container {
+    width: 450px; /* Ancho del contenedor */
+    height: 250px; /* Altura del contenedor */
+    margin: 0 auto; /* Centrar horizontalmente */
+    margin-top: 50px; /* Espacio superior */
+    display: flex; /* Para centrar verticalmente */
+    justify-content: center; /* Para centrar verticalmente */
+    align-items: center; /* Para centrar verticalmente */
+}
